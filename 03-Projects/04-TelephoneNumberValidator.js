@@ -20,14 +20,8 @@ debe confirmar que el código de país es 1. Devuelve truesi la cadena es un nú
 Válido; de lo contrario, vuelva false.
 */
 function telephoneCheck(str) {
-    const phoneno = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
-    if(str.match(phoneno)) {
-      return true;
-    }  
-    else {  
-      console.log("message");
-      return false;
-    }
+    const phoneno = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;    
+	return phoneno.test(str);
 }
 console.log(telephoneCheck("555-555-5555")); 
   
